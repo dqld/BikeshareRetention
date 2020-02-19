@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 import static org.apache.spark.sql.functions.*;
 
-class BikeShareProcess implements Logging, BikeShareTripReader {
+class BikeShareProcess implements BikeShareTripReader {
 
     public static List<String> fields = Arrays.asList("user_id",
                 "subscriber_type",
