@@ -26,7 +26,7 @@ class RetentionProcess implements Logging, UserReader, BikeShareTripReader {
         RetentionProcess process = new RetentionProcess();
         process.retentionPrep(spark, conf);
     }
-
+    // It may help you to understand if you go to Wiki page
     public void retentionPrep(SparkSession spark, BikeshareConf conf) throws Exception {
         Dataset<Row> bikeShareDS = readBikeShareTrip(conf, spark);
         Dataset<Row> userDS = readUserInfo(conf, spark);
@@ -56,6 +56,7 @@ class RetentionProcess implements Logging, UserReader, BikeShareTripReader {
 
         Dataset<Row> bikeFilteredAgoDS = bikeFilteredDf.select("user_id", "user_age_days").distinct();
 
+        // Get retention by calculate dayAgoBikeShareDS and bikeFilteredAgoDS
         Dataset<Row> aggPrepDS = dayAgoBikeShareDS.join(bikeFilteredAgoDS,
                 dayAgoBikeShareDS.col("user_id").equalTo(bikeFilteredAgoDS.col("user_id")), "left")
                 .drop(bikeFilteredAgoDS.col("user_id"));
