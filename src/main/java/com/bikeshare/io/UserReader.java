@@ -13,10 +13,9 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-public interface UserReader extends Logging {
+public interface UserReader{
 
     default Dataset<Row> readUserInfo(BikeshareConf conf, SparkSession spark) {
-        logInfo(() -> String.format("reading from %s", conf.uniqueUserPath));
         Dataset<Row> rowsDS;
         try {
             rowsDS = spark.read().json(conf.uniqueUserPath);

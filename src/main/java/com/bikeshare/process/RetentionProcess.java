@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 import static org.apache.spark.sql.functions.*;
 
-class RetentionProcess implements Logging, UserReader, BikeShareTripReader {
+class RetentionProcess implements UserReader, BikeShareTripReader {
 
     public static void main(String[] args) throws Exception {
         BikeshareConf conf = new BikeshareConf();

@@ -10,7 +10,7 @@ import org.apache.spark.sql.SparkSession;
 
 import static org.apache.spark.sql.functions.*;
 
-public class UserProcess implements Logging, UserReader, BikeShareTripReader {
+public class UserProcess implements UserReader, BikeShareTripReader {
 
     private static SparkSession spark = SparkSession
             .builder()

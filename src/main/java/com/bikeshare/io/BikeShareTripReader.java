@@ -12,12 +12,10 @@ import org.joda.time.format.DateTimeFormatter;
 
 import static org.apache.spark.sql.functions.lit;
 
-public interface BikeShareTripReader extends Logging {
+public interface BikeShareTripReader {
 
     default Dataset readBikeShareTrip(BikeshareConf conf, SparkSession spark) {
         String path = Utils.pathGenerator(conf.inputBikeSharePath, conf.datePrefix, conf.processDate);
-
-        logInfo(() -> "reading from %s".format(path));
 
         Dataset<Row> bikeShareDS;
         try {
@@ -57,8 +55,6 @@ public interface BikeShareTripReader extends Logging {
 
     default Dataset<Row> readDayAgoBikeShareTrip(BikeshareConf conf, SparkSession spark) throws Exception {
         String path = dayAgoReadDataOutPath(conf);
-
-        logInfo(()->"reading from %s".format(path));
 
         Dataset<Row> bikeShareDS;
         try {

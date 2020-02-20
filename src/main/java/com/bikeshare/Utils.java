@@ -5,12 +5,13 @@ import org.apache.spark.internal.Logging;
 import com.typesafe.config.ConfigFactory;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Utils implements Logging {
+public class Utils {
 
     public static Dataset selectColumns(BikeshareConf conf, String sourceKey, Dataset ds) {
         List<Column> fields = getListFromConf(conf.selectColumnsConfigFile, sourceKey).stream().map(x -> new Column(x)).collect(Collectors.toList());
