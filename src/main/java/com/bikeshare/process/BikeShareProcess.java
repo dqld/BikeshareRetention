@@ -3,14 +3,14 @@ package com.bikeshare.process;
 import com.bikeshare.BikeshareConf;
 import com.bikeshare.Utils;
 import com.bikeshare.io.BikeShareTripReader;
-import org.apache.spark.internal.Logging;
 import org.apache.spark.sql.*;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.apache.spark.sql.functions.*;
+import static org.apache.spark.sql.functions.avg;
+import static org.apache.spark.sql.functions.col;
 
 class BikeShareProcess implements BikeShareTripReader {
 

@@ -4,11 +4,13 @@ import com.bikeshare.BikeshareConf;
 import com.bikeshare.Utils;
 import com.bikeshare.io.BikeShareTripReader;
 import com.bikeshare.io.UserReader;
-import org.apache.spark.internal.Logging;
-import org.apache.spark.sql.*;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
-import static org.apache.spark.sql.functions.*;
+import static org.apache.spark.sql.functions.col;
+import static org.apache.spark.sql.functions.min;
 
 public class UserProcess implements UserReader, BikeShareTripReader {
 

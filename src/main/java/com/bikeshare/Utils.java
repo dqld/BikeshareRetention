@@ -1,11 +1,9 @@
 package com.bikeshare;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.spark.internal.Logging;
 import com.typesafe.config.ConfigFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
-import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,17 +1,11 @@
 package com.bikeshare.io;
 
 import com.bikeshare.BikeshareConf;
-import org.apache.parquet.format.StringType;
-import org.apache.spark.internal.Logging;
-import org.apache.spark.sql.Column;
-
-import static org.apache.spark.sql.functions.*;
-
 import org.apache.spark.sql.Dataset;
-
-
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+
+import static org.apache.spark.sql.functions.lit;
 
 public interface UserReader{
 

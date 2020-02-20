@@ -3,7 +3,6 @@ package com.bikeshare.process;
 import com.bikeshare.BikeshareConf;
 import com.bikeshare.io.BikeShareTripReader;
 import com.bikeshare.io.UserReader;
-import org.apache.spark.internal.Logging;
 import org.apache.spark.sql.*;
 
 import java.util.ArrayList;

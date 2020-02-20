@@ -2,7 +2,6 @@ package com.bikeshare.io;
 
 import com.bikeshare.BikeshareConf;
 import com.bikeshare.Utils;
-import org.apache.spark.internal.Logging;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
